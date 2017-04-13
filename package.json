@@ -1,0 +1,23 @@
+{
+  "name": "bs-leaflet",
+  "version": "0.0.1",
+  "description": "BuckleScript bindings for Leaflet.js",
+  "main": "index.js",
+  "repository": "https://github.com/BuckleTypes/bs-leaflet",
+  "author": "Jiayu Liu <jiayu@madadata.com>",
+  "scripts": {
+    "clean": "bsb -clean-world",
+    "build": "bsb -make-world",
+    "pretest": "yarn run build",
+    "test": "jest",
+    "start": "yarn run build -- -w"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "bs-jest": "^0.0.1",
+    "bs-platform": "^1.6.0",
+    "husky": "^0.13.3",
+    "jest": "^19.0.2",
+    "leaflet": "^1.0.3"
+  }
+}
