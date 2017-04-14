@@ -305,10 +305,6 @@ browser-resolve@^1.11.2:
   dependencies:
     resolve "1.1.7"
 
-"bs-fetch@github:buckletypes/bs-fetch":
-  version "0.1.0"
-  resolved "https://codeload.github.com/buckletypes/bs-fetch/tar.gz/dfc68f86f68cd3e96611db5967bb616c6dc820bd"
-
 bs-jest@^0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/bs-jest/-/bs-jest-0.0.1.tgz#2ec3566f4c4554b84dc70ac57ee0e3d8bd2e1d8f"
@@ -1584,12 +1580,6 @@ read-pkg@^1.0.0:
     load-json-file "^1.0.0"
     normalize-package-data "^2.3.2"
     path-type "^1.0.0"
-
-reason-js@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/reason-js/-/reason-js-0.3.0.tgz#87ef218bf10e4e9be93bc44b459bec2c60cfdd02"
-  dependencies:
-    bs-fetch BuckleTypes/bs-fetch
 
 regenerator-runtime@^0.10.0:
   version "0.10.3"

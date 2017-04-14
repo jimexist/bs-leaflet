@@ -2,7 +2,7 @@
   "name" : "bs-leaflet",
   "sources" : [
     {
-      "dir": "src",
+      "dir": "src"
     },
     {
       "dir": "__tests__",
@@ -10,7 +10,6 @@
     }
   ],
   "bs-dependencies": [
-    "bs-jest",
-    "reason-js"
+    "bs-jest"
   ]
 }
