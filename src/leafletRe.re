@@ -27,7 +27,7 @@ and Point: {
   external unscaleBy : t => float => t = "" [@@bs.send];
   external distanceTo : t => float = "" [@@bs.send.pipe : t];
   external contains : t => bool = "" [@@bs.send.pipe : t];
-  external equals : t => t => bool = "" [@@bs.send];
+  external equals : t => bool = "" [@@bs.send.pipe : t];
   external x : t => float = "" [@@bs.get];
   external y : t => float = "" [@@bs.get];
 }
