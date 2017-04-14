@@ -10,6 +10,7 @@
     }
   ],
   "bs-dependencies": [
-    "bs-jest"
+    "bs-jest",
+    "reason-js"
   ]
 }
