@@ -4,7 +4,7 @@
   "description": "BuckleScript bindings for Leaflet.js",
   "main": "index.js",
   "repository": "https://github.com/BuckleTypes/bs-leaflet",
-  "author": "Jiayu Liu <jiayu@madadata.com>",
+  "author": "Jiayu Liu <jimexist@gmail.com>",
   "scripts": {
     "clean": "bsb -clean-world",
     "build": "bsb -make-world",
