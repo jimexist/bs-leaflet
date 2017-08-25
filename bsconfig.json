@@ -1,6 +1,7 @@
 {
-  "name" : "bs-leaflet",
-  "sources" : [
+  "name": "bs-leaflet",
+  "bsc-flags": ["-bs-super-errors"],
+  "sources": [
     {
       "dir": "src"
     },
@@ -9,7 +10,5 @@
       "type": "dev"
     }
   ],
-  "bs-dependencies": [
-    "bs-jest"
-  ]
+  "bs-dev-dependencies": ["bs-jest"]
 }
