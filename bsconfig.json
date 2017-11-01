@@ -10,5 +10,6 @@
       "type": "dev"
     }
   ],
-  "bs-dev-dependencies": ["bs-jest"]
+  "bs-dev-dependencies": ["bs-jest"],
+  "refmt": 3
 }
