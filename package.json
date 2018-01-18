@@ -1,6 +1,6 @@
 {
   "name": "bs-leaflet",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "BuckleScript bindings for Leaflet.js",
   "main": "index.js",
   "author": "Jiayu Liu <jimexist@gmail.com>",
