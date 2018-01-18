@@ -42,12 +42,17 @@ module Map = {
   /* Interaction Options */
   /* Map State Options */
   [@bs.send.pipe : t] external crs : CRS.t = "";
-  [@bs.send.pipe : t] [@bs.return undefined_to_opt] external center : option(LatLng.t) = "";
-  [@bs.send.pipe : t] [@bs.return undefined_to_opt] external zoom : option(int) = "";
-  [@bs.send.pipe : t] [@bs.return undefined_to_opt] external maxZoom : option(int) = "";
-  [@bs.send.pipe : t] [@bs.return undefined_to_opt] external minZoom : option(int) = "";
+  [@bs.send.pipe : t] [@bs.return undefined_to_opt]
+  external center : option(LatLng.t) = "";
+  [@bs.send.pipe : t] [@bs.return undefined_to_opt]
+  external zoom : option(int) = "";
+  [@bs.send.pipe : t] [@bs.return undefined_to_opt]
+  external maxZoom : option(int) = "";
+  [@bs.send.pipe : t] [@bs.return undefined_to_opt]
+  external minZoom : option(int) = "";
   [@bs.send.pipe : t] external layers : list(Layer.t) = "";
-  [@bs.send.pipe : t] [@bs.return null_to_opt] external maxBounds : option(LatLngBounds.t) = "";
+  [@bs.send.pipe : t] [@bs.return null_to_opt]
+  external maxBounds : option(LatLngBounds.t) = "";
   /* Methods for Layers and Controls */
   [@bs.send] external addLayer : (t, Layer.t) => t = "";
   [@bs.send] external removeLayer : (t, Layer.t) => t = "";
@@ -58,17 +63,29 @@ module Control = {
   type t;
 };
 
-type map_options = {. "center": (int, int), "zoom": int};
+type map_options = {
+  .
+  "center": (int, int),
+  "zoom": int
+};
 
-type tile_layer_options = {. "minZoom": int, "maxZoom": int, "detectRetina": bool};
+type tile_layer_options = {
+  .
+  "minZoom": int,
+  "maxZoom": int,
+  "detectRetina": bool
+};
 
-[@bs.module "leaflet"] external tileLayer : (string, tile_layer_options) => Layer.t = "";
+[@bs.module "leaflet"]
+external tileLayer : (string, tile_layer_options) => Layer.t = "";
 
-[@bs.module "leaflet"] external latLngBounds : (LatLng.t, LatLng.t) => LatLngBounds.t = "";
+[@bs.module "leaflet"]
+external latLngBounds : (LatLng.t, LatLng.t) => LatLngBounds.t = "";
 
 [@bs.module "leaflet"] external latLng : ((float, float)) => LatLng.t = "";
 
-[@bs.module "leaflet"] external latLngAlt : ((float, float, float)) => LatLng.t = "latLng";
+[@bs.module "leaflet"]
+external latLngAlt : ((float, float, float)) => LatLng.t = "latLng";
 
 let create_lat_lng = (~latitude, ~longitude, ~altitude) =>
   switch altitude {
@@ -78,6 +95,8 @@ let create_lat_lng = (~latitude, ~longitude, ~altitude) =>
 
 [@bs.module "leaflet"] external point_int : (int, int) => Point.t = "point";
 
-[@bs.module "leaflet"] external point_float : (float, float, Js.boolean) => Point.t = "point";
+[@bs.module "leaflet"]
+external point_float : (float, float, Js.boolean) => Point.t = "point";
 
-[@bs.module "leaflet"] external create_map : (string, map_options) => Map.t = "map";
+[@bs.module "leaflet"]
+external create_map : (string, map_options) => Map.t = "map";

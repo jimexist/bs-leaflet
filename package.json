@@ -10,11 +10,7 @@
   },
   "homepage": "https://github.com/reasonml-community/bs-leaflet#readme",
   "bugs": "https://github.com/reasonml-community/bs-leaflet/issues",
-  "keywords": [
-    "bucklescript",
-    "gis",
-    "map"
-  ],
+  "keywords": ["bucklescript", "gis", "map", "leaflet"],
   "scripts": {
     "build": "bsb -make-world",
     "start": "bsb -make-world -w",
@@ -23,11 +19,14 @@
     "test": "jest"
   },
   "license": "MIT",
+  "peerDependencies": {
+    "leaflet": "^1.3.0"
+  },
   "devDependencies": {
-    "bs-jest": "^0.0.1",
-    "bs-platform": "^2.0.0",
-    "husky": "^0.13.3",
-    "jest": "^19.0.2",
-    "leaflet": "^1.0.3"
+    "@glennsl/bs-jest": "^0.3.2",
+    "bs-platform": "^2.1.0",
+    "husky": "^0.14.3",
+    "jest": "^22.1.2",
+    "leaflet": "^1.3.0"
   }
 }
