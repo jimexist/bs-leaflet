@@ -21,12 +21,12 @@ describe(
         expect(point_int(0, 0)) |> toEqual(point_int(0, 0))
       );
       test("creation float", () =>
-        expect(point_float(0., 0., Js.false_))
-        |> toEqual(point_float(0., 0., Js.false_))
+        expect(point_float(0., 0., false))
+        |> toEqual(point_float(0., 0., false))
       );
       test("creation float with rounding", () =>
-        expect(point_float(0.1, 0.1, Js.true_))
-        |> toEqual(point_float(0.2, 0.2, Js.true_))
+        expect(point_float(0.1, 0.1, true))
+        |> toEqual(point_float(0.2, 0.2, true))
       );
     }
   )

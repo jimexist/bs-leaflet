@@ -14,9 +14,9 @@ module Point = {
   [@bs.send] external multiplyBy : (t, float) => t = "";
   [@bs.send] external scaleBy : (t, float) => t = "";
   [@bs.send] external unscaleBy : (t, float) => t = "";
-  [@bs.send.pipe : t] external distanceTo : t => float = "";
-  [@bs.send.pipe : t] external contains : t => bool = "";
-  [@bs.send.pipe : t] external equals : t => bool = "";
+  [@bs.send] external distanceTo : (t, t) => float = "";
+  [@bs.send] external contains : (t, t) => bool = "";
+  [@bs.send] external equals : (t, t) => bool = "";
   [@bs.get] external x : t => float = "";
   [@bs.get] external y : t => float = "";
 };
@@ -30,29 +30,29 @@ module LatLng = {
   [@bs.get] external lat : t => float = "";
   [@bs.get] external lng : t => float = "";
   [@bs.get] external alt : t => int = "";
-  [@bs.send.pipe : t] external toString : string = "";
+  [@bs.send] external toString : t => string = "";
   [@bs.send] external equals : (t, t) => bool = "";
   [@bs.send] external distanceTo : (t, t) => float = "";
-  [@bs.send.pipe : t] external wrap : t = "";
-  [@bs.send.pipe : t] external toBounds : int => LatLngBounds.t = "";
+  [@bs.send] external wrap : t => t = "";
+  [@bs.send] external toBounds : (t, int) => LatLngBounds.t = "";
 };
 
 module Map = {
   type t;
   /* Interaction Options */
   /* Map State Options */
-  [@bs.send.pipe : t] external crs : CRS.t = "";
-  [@bs.send.pipe : t] [@bs.return undefined_to_opt]
-  external center : option(LatLng.t) = "";
-  [@bs.send.pipe : t] [@bs.return undefined_to_opt]
-  external zoom : option(int) = "";
-  [@bs.send.pipe : t] [@bs.return undefined_to_opt]
-  external maxZoom : option(int) = "";
-  [@bs.send.pipe : t] [@bs.return undefined_to_opt]
-  external minZoom : option(int) = "";
-  [@bs.send.pipe : t] external layers : list(Layer.t) = "";
-  [@bs.send.pipe : t] [@bs.return null_to_opt]
-  external maxBounds : option(LatLngBounds.t) = "";
+  [@bs.send] external crs : t => CRS.t = "";
+  [@bs.send] [@bs.return undefined_to_opt]
+  external center : t => option(LatLng.t) = "";
+  [@bs.send] [@bs.return undefined_to_opt]
+  external zoom : t => option(int) = "";
+  [@bs.send] [@bs.return undefined_to_opt]
+  external maxZoom : t => option(int) = "";
+  [@bs.send] [@bs.return undefined_to_opt]
+  external minZoom : t => option(int) = "";
+  [@bs.send] external layers : t => list(Layer.t) = "";
+  [@bs.send] [@bs.return null_to_opt]
+  external maxBounds : t => option(LatLngBounds.t) = "";
   /* Methods for Layers and Controls */
   [@bs.send] external addLayer : (t, Layer.t) => t = "";
   [@bs.send] external removeLayer : (t, Layer.t) => t = "";
@@ -66,14 +66,14 @@ module Control = {
 type map_options = {
   .
   "center": (int, int),
-  "zoom": int
+  "zoom": int,
 };
 
 type tile_layer_options = {
   .
   "minZoom": int,
   "maxZoom": int,
-  "detectRetina": bool
+  "detectRetina": bool,
 };
 
 [@bs.module "leaflet"]
@@ -88,7 +88,7 @@ external latLngBounds : (LatLng.t, LatLng.t) => LatLngBounds.t = "";
 external latLngAlt : ((float, float, float)) => LatLng.t = "latLng";
 
 let create_lat_lng = (~latitude, ~longitude, ~altitude) =>
-  switch altitude {
+  switch (altitude) {
   | Some(alt) => latLngAlt((latitude, longitude, alt))
   | _ => latLng((latitude, longitude))
   };
@@ -96,7 +96,7 @@ let create_lat_lng = (~latitude, ~longitude, ~altitude) =>
 [@bs.module "leaflet"] external point_int : (int, int) => Point.t = "point";
 
 [@bs.module "leaflet"]
-external point_float : (float, float, Js.boolean) => Point.t = "point";
+external point_float : (float, float, bool) => Point.t = "point";
 
 [@bs.module "leaflet"]
 external create_map : (string, map_options) => Map.t = "map";
