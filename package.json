@@ -1,6 +1,6 @@
 {
   "name": "bs-leaflet",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "BuckleScript bindings for Leaflet.js",
   "main": "index.js",
   "author": "Jiayu Liu <jimexist@gmail.com>",
@@ -10,7 +10,12 @@
   },
   "homepage": "https://github.com/reasonml-community/bs-leaflet#readme",
   "bugs": "https://github.com/reasonml-community/bs-leaflet/issues",
-  "keywords": ["bucklescript", "gis", "map", "leaflet"],
+  "keywords": [
+    "bucklescript",
+    "gis",
+    "map",
+    "leaflet"
+  ],
   "scripts": {
     "build": "bsb -make-world",
     "start": "bsb -make-world -w",
