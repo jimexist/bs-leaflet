@@ -6,4 +6,5 @@ node_js:
   - "7"
   - "6"
   - "4"
-
+notifications:
+  webhooks: https://www.travisbuddy.com/
